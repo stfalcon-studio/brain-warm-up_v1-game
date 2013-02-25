@@ -1,0 +1,10 @@
+{
+    "name": "ftrrtf/brain-warm-up-1",
+    "description": "Brain warm-up #1",
+    "autoload": {
+        "psr-0": {
+            "": "src/",
+            "BaseGameTest": "tests/"
+        }
+    }
+}
