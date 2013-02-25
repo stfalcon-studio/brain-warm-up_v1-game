@@ -41,7 +41,7 @@ class Palindrome
                     break;
                 }
             }
-            // Odd
+        // Odd
         } else {
             $singleLetterUsed = false;
 

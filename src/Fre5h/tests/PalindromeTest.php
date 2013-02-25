@@ -14,27 +14,27 @@ class PalindromeTest extends \PHPUnit_Framework_TestCase
     /**
      * @var \Fre5h\Helper\Palindrome
      */
-    protected $palindrome;
+    protected $palindromeHelper;
 
     /**
-     * Set up Palindrome
+     * Set up test
      */
     protected function setUp()
     {
-        $this->palindrome = new Palindrome();
+        $this->palindromeHelper = new Palindrome();
     }
 
     /**
      * Test method isPalindrome
      *
-     * @param string $text           Text to be checked
-     * @param string $expectedAnswer Anwer
+     * @param string $text           Text to check
+     * @param string $expectedAnswer Answer
      *
      * @dataProvider isPalindromeProvider
      */
     public function testIsPalindrome($text, $expectedAnswer)
     {
-        $answer = $this->palindrome->isPalindrome($text);
+        $answer = $this->palindromeHelper->isPalindrome($text);
         $this->assertEquals($answer, $expectedAnswer);
     }
 
@@ -60,25 +60,20 @@ class PalindromeTest extends \PHPUnit_Framework_TestCase
             true
         ];
 
-        $data[3] = [
-            'aBba',
-            false
-        ];
-
         return $data;
     }
 
     /**
      * Test method canBePalindrome
      *
-     * @param string $text           Text to be checked
+     * @param string $text           Text to check
      * @param string $expectedAnswer Answer
      *
      * @dataProvider canBePalindromeProvider
      */
     public function testCanBePalindrome($text, $expectedAnswer)
     {
-        $answer = $this->palindrome->canBePalindrome($text);
+        $answer = $this->palindromeHelper->canBePalindrome($text);
         $this->assertEquals($answer, $expectedAnswer);
     }
 
