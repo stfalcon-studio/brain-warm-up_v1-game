@@ -12,7 +12,7 @@ use Fre5h\Helper\Palindrome;
 class Player
 {
     /**
-     * @var string Name of current user
+     * @var string Name of the current user
      */
     protected $name;
 
@@ -60,7 +60,7 @@ class Player
     /**
      * Process the text
      *
-     * @param string $text
+     * @param string $text Text to process
      *
      * @return string
      */
@@ -78,7 +78,7 @@ class Player
     }
 
     /**
-     * Remove letter from text and return new version of text
+     * Remove a letter from text and return new version of text
      *
      * @param string $text
      *
@@ -87,12 +87,12 @@ class Player
     protected function removeLetterFromText($text)
     {
         $charsStats = count_chars($text, 1); // Get stats of chars in text
-        arsort($charsStats); // Most frequent on the top
+        arsort($charsStats); // Most frequent chars on the top
 
-        $letterToDelete = chr(array_keys($charsStats)[0]); // Find letter that should be deleted
+        $letterToDelete = chr(array_keys($charsStats)[0]); // Find letter that should be deleted (most frequent)
 
-        $letterPosition = strpos($text, $letterToDelete); // Find position of that letter in text
+        $letterPosition = strpos($text, $letterToDelete); // Find position of the letter in text
 
-        return substr_replace($text, '', $letterPosition, 1); // Remove that letter from text
+        return substr_replace($text, '', $letterPosition, 1); // Remove the letter from text
     }
 }
