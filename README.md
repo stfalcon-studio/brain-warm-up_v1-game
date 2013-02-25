@@ -1,6 +1,8 @@
 Brain warm-up #1
 ===============
 
+[![Build Status](https://travis-ci.org/ftrrtf/brain-warm-up-1.png?branch=master)](https://travis-ci.org/ftrrtf/brain-warm-up-1)
+
 
 У двух игроков есть строка *s*, состоящая из строчных букв латинского алфавита. Они играют в игру, которая описывается следующими правилами:
 
