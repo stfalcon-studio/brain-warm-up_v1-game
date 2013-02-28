@@ -119,9 +119,14 @@ class PalindromeTest extends \PHPUnit_Framework_TestCase
             false
         ];
 
-        $data[6] = [
+        $data[7] = [
             'aabbccdef',
             false
+        ];
+
+        $data[8] = [
+            'aabbccdd',
+            true
         ];
 
         return $data;

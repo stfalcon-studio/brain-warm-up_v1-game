@@ -33,7 +33,7 @@ class Palindrome
         $result = true;
 
         // Even
-        if (count($text) % 2 === 0) {
+        if (strlen($text) % 2 === 0) {
             // Analyze stats of used letters
             foreach (count_chars($text, 1) as $count) {
                 if ($count % 2 !== 0) {
