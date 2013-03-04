@@ -6,9 +6,13 @@ class Game {
 
     public function whoWillWin($input)
     {
-        /**
-         * Implementation
-         */
+        $reversedInput = strrev($input);
+
+        if($input == $reversedInput) {
+            return 'First';
+        } else {
+            //TODO finish
+        }
 
         return 'First';
     }
