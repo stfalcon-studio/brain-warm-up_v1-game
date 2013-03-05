@@ -25,38 +25,60 @@ class Game {
             $i = 0;
             $removedSymbolsCounter = 0;
             $length = count($symbols);
+            $notPairSymbols = '';
 
             foreach($symbols as $key => $val) {
                 $i++;
 
-                if ($i != $length && $length > 1) {
-                    if ($val % 2 != 0) {
-                        $val--;
-                        $removedSymbolsCounter ++;
+                if ($i != $length && $length > 1 && $val % 2 != 0) {
+
+                    for ($y = 0; $y < $val; $y++) {
+                        $notPairSymbols .= $key;
+                    }
+                    $removedSymbolsCounter++;
+                } else {
+                    if ($i == 1) {
+                        for ($y = 0; $y < $val; $y++) {
+                            $palindrome .= $key;
+                        }
+                    } else {
+                        $middle = strlen($palindrome) * 0.5;
+                        for ($y = 0; $y < $val; $y++) {
+                            $palindrome = substr_replace($palindrome, $key, $middle, 0);
+                        }
                     }
                 }
 
-                if ($i == 1) {
-                    for ($y = 0; $y < $val; $y++)
-                    $palindrome .= $key;
-                } else {
-                    $middle = strlen($palindrome) * 0.5;
-                    for ($y = 0; $y < $val; $y++)
-                    $palindrome = substr_replace($palindrome, $key, $middle, 0);
+
+            }
+
+            $palindromeLength = strlen($palindrome);
+
+            if ($palindromeLength % 2 == 0) {
+                $symbols = array();
+
+                foreach (count_chars($notPairSymbols, 1) as $char => $amount) {
+                    $symbols[chr($char)] = $amount;
+                }
+
+                $length = count($symbols);
+                $z = 0;
+
+                foreach($symbols as $key => $val) {
+                    $z++;
+                    if ($z == $length) {
+                        $removedSymbolsCounter--;
+                        $middle = strlen($palindrome) * 0.5;
+                        for ($y = 0; $y < $val; $y++) {
+                            $palindrome = substr_replace($palindrome, $key, $middle, 0);
+                        }
+                    }
                 }
             }
 
-            var_dump($i);
-            echo " input: ";
-            var_dump($input);
-            echo " palindrome: ";
-            var_dump($palindrome);
-
             if ($removedSymbolsCounter % 2 == 0) {
-                var_dump('First');
                 return 'First';
             } else {
-                var_dump('Second');
                 return 'Second';
             }
         }
