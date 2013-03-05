@@ -28,7 +28,7 @@ class Game {
             foreach($symbols as $key => $val) {
                 $i++;
 
-                if ($i != $length && $length > 2) {
+                if ($i != $length && $length > 1) {
                     if ($val % 2 != 0) {
                         $val--;
                     }
