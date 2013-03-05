@@ -11,7 +11,6 @@ class Game {
         if($input == $reversedInput) {
             return 'First';
         } else {
-            //TODO finish
 
             $symbols = array();
 
@@ -20,10 +19,52 @@ class Game {
             }
 
             array_multisort($symbols, SORT_DESC);
-            print_r($symbols);
+//            print_r($symbols);
+
+            $palindrome = '';
+
+            $i = 0;
+            $length = count($symbols);
+
+            foreach($symbols as $key => $val) {
+                $i++;
+
+                if ($i != $length && $length > 2) {
+                    if ($val % 2 != 0) {
+                        $val--;
+                    }
+                }
+
+                if ($i == 1) {
+                    for ($y = 0; $y < $val; $y++)
+                    $palindrome .= $key;
+                } else {
+                    $middle = strlen($palindrome) * 0.5;
+                    for ($y = 0; $y < $val; $y++)
+                    $palindrome = substr_replace($palindrome, $key, $middle, 0);
+                }
+            }
+
+            var_dump($i);
+            var_dump($palindrome);
+//            $reverse = strrev($palindrome);
+
+//            if ($palindrome == $reverse) {
+//                var_dump('YES');
+//            } else {
+//                var_dump('NO');
+//            }
+
+            if ($i % 2 == 0) {
+                var_dump('First');
+                return 'First';
+            } else {
+                var_dump('Second');
+                return 'Second';
+            }
         }
 
-        return 'First';
+//        return 'First';
     }
 
 }
