@@ -23,6 +23,7 @@ class Game {
             $palindrome = '';
 
             $i = 0;
+            $removedSymbolsCounter = 0;
             $length = count($symbols);
 
             foreach($symbols as $key => $val) {
@@ -31,6 +32,7 @@ class Game {
                 if ($i != $length && $length > 1) {
                     if ($val % 2 != 0) {
                         $val--;
+                        $removedSymbolsCounter ++;
                     }
                 }
 
@@ -45,9 +47,12 @@ class Game {
             }
 
             var_dump($i);
+            echo " input: ";
+            var_dump($input);
+            echo " palindrome: ";
             var_dump($palindrome);
 
-            if ($i % 2 == 0) {
+            if ($removedSymbolsCounter % 2 == 0) {
                 var_dump('First');
                 return 'First';
             } else {
