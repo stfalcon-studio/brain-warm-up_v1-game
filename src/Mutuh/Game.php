@@ -19,7 +19,6 @@ class Game {
             }
 
             array_multisort($symbols, SORT_DESC);
-//            print_r($symbols);
 
             $palindrome = '';
 
@@ -47,13 +46,6 @@ class Game {
 
             var_dump($i);
             var_dump($palindrome);
-//            $reverse = strrev($palindrome);
-
-//            if ($palindrome == $reverse) {
-//                var_dump('YES');
-//            } else {
-//                var_dump('NO');
-//            }
 
             if ($i % 2 == 0) {
                 var_dump('First');
@@ -63,8 +55,6 @@ class Game {
                 return 'Second';
             }
         }
-
-//        return 'First';
     }
 
 }
