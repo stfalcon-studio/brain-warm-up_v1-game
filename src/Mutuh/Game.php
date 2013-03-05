@@ -68,10 +68,12 @@ class Game {
                     $z++;
                     if ($z == $length) {
                         $removedSymbolsCounter--;
-                        $middle = strlen($palindrome) * 0.5;
-                        for ($y = 0; $y < $val; $y++) {
-                            $palindrome = substr_replace($palindrome, $key, $middle, 0);
-                        }
+                    } else {
+                        $val--;
+                    }
+                    $middle = strlen($palindrome) * 0.5;
+                    for ($y = 0; $y < $val; $y++) {
+                        $palindrome = substr_replace($palindrome, $key, $middle, 0);
                     }
                 }
             }
