@@ -1,6 +1,6 @@
 <?php
 
-namespace Ftrrtf;
+namespace Ftrrtf\Variant1;
 
 class Game {
 
