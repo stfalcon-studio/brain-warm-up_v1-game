@@ -86,6 +86,8 @@ class Game {
 
     private function assocArrayOfSymbols($inputString)
     {
+        $symbols = array();
+
         foreach (count_chars($inputString, 1) as $char => $amount) {
             $symbols[chr($char)] = $amount;
         }
