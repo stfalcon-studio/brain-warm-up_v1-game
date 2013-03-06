@@ -55,15 +55,7 @@ class Game {
             return $input;
         }
 
-        // Filtering only even frequency from stat
-        $evenLetterFrequency = array_filter($lettersFrequency, function($frequency){
-            return $frequency % 2 == 0;
-        });
-
-        // Get max even value (or what was left)
-        $letterFrequency = count($evenLetterFrequency) > 0
-            ? max($evenLetterFrequency)
-            : max($lettersFrequency);
+        $letterFrequency = max($lettersFrequency);
 
         // Remove letter
         $letterPosition = strpos(
@@ -89,9 +81,14 @@ class Game {
      */
     protected function palindromeExist($letterFrequency)
     {
+        $allowedOneOdd = true;
         foreach ($letterFrequency as $letter => $frequency) {
             if ($frequency % 2 != 0) {
-                return false;
+                if ($allowedOneOdd) {
+                    $allowedOneOdd = false;
+                } else {
+                    return false;
+                }
             }
         }
 
