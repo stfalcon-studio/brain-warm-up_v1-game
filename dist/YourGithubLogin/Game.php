@@ -1,6 +1,6 @@
 <?php
 
-namespace YourGitHubLogin;
+namespace Mutuh;
 
 class Game {
 
