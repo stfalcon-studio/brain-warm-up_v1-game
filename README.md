@@ -1,8 +1,7 @@
 Brain warm-up #1
 ===============
 
-[![Build Status](https://travis-ci.org/ftrrtf/brain-warm-up-1.png?branch=master)](https://travis-ci.org/ftrrtf/brain-warm-up-1)
-
+[![Build Status](https://travis-ci.org/stfalcon-studio/brain-warm-up_v1-game.png?branch=master)](https://travis-ci.org/stfalcon-studio/brain-warm-up_v1-game)
 
 У двух игроков есть строка *s*, состоящая из строчных букв латинского алфавита. Они играют в игру, которая описывается следующими правилами:
 
@@ -22,7 +21,7 @@ Brain warm-up #1
 ## Workflow
 
 - Форкаем репозиторий, создаем бранч вида `%login%-version`.
-- Запускаем `install` через композер для автозагрузки классов.
+- Запускаем `composer install` для автозагрузки классов
 - Копируем заготовку из папки `dist\*`, меняем везде `YourGitHubLogin` на свой логин от GitHub (не забываем об PSR-0)
 - Пишем код, запускаем тесты (просто `phpunit` в папке с проектом), и т.д.
-- Когда все тесты проходят — отправляем PR в `master`-ветку (пример https://github.com/ftrrtf/brain-warm-up-1/pull/1).
+- Когда все тесты проходят — отправляем PR в `solutions`-ветку.
