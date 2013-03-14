@@ -8,12 +8,16 @@ class Game {
 
     public function whoWillWin($input)
     {
-        if ($this->checkString($input)) {
-            return $this->whichStep;
-        }
-        else {
-            $this->changeStep();
-            return $this->whoWillWin($this->removeLiteral($input));
+        $length = strlen($input);
+
+        for($i = 0; $i < $length; $i++) {
+            if ($this->checkString($input)) {
+                return $this->whichStep;
+            }
+            else {
+                $this->changeStep();
+                $input = $this->removeLiteral($input);
+            }
         }
     }
 
@@ -109,12 +113,9 @@ class Game {
         }
     }
 
+    //debug
     public function startGame()
     {
-        return $this->whoWillWin('desktciwoidfuswycratvovutcgjrcyzmilsmadzaegseetexygedzxdmorxzxgiqhcuppshcsjcozkopebegfmxzxxagzwoymlghgjexcgfojychyt');
+        return $this->whoWillWin('aaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbccccccccccccccccccccddddddddddeeeeeeeeeeffffgggghhhhiiiijjjjqqqqwwwweeeerrrrttttyyyyuuuuiiiiooooppppaaaassssddddffffgggghhhhjjjjkkkkllllzzzzxxxxccccvvvvbbbbnnnnmmmm');
     }
 }
-
-$game =  new Game();
-echo $game->startGame();
-
