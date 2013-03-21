@@ -2,10 +2,16 @@
 
 namespace vatseek;
 
-class Game {
-
+class Game
+{
     protected $whichStep = 'First';
 
+    /**
+     * main function
+     *
+     * @param string $input
+     * @return string
+     */
     public function whoWillWin($input)
     {
         $length = strlen($input);
@@ -21,6 +27,13 @@ class Game {
         }
     }
 
+    /**
+     * delete selected literal from string
+     *
+     * @param string $string
+     * @param string $litera
+     * @return string
+     */
     public function delCaracter($string, $litera)
     {
         $string = str_split($string);
@@ -35,6 +48,12 @@ class Game {
         return implode($string);
     }
 
+    /**
+     * Chose wish liter may be deleted
+     *
+     * @param $input
+     * @return string
+     */
     public function removeLiteral($input)
     {
         $data = array();
@@ -72,6 +91,12 @@ class Game {
         }
     }
 
+    /**
+     * Check is string palindrom
+     *
+     * @param string $input
+     * @return bool
+     */
     public function checkString($input)
     {
         $data = array();
@@ -103,7 +128,10 @@ class Game {
         return false;
     }
 
-    public function ChangeStep()
+    /**
+     * change user which turn
+     */
+    public function changeStep()
     {
         if ($this->whichStep == 'First') {
             $this->whichStep = 'Second';
@@ -111,11 +139,5 @@ class Game {
         else {
             $this->whichStep = 'First';
         }
-    }
-
-    //debug
-    public function startGame()
-    {
-        return $this->whoWillWin('aaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbccccccccccccccccccccddddddddddeeeeeeeeeeffffgggghhhhiiiijjjjqqqqwwwweeeerrrrttttyyyyuuuuiiiiooooppppaaaassssddddffffgggghhhhjjjjkkkkllllzzzzxxxxccccvvvvbbbbnnnnmmmm');
     }
 }
