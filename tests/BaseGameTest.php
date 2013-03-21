@@ -42,7 +42,6 @@ abstract class BaseGameTest extends \PHPUnit_Framework_TestCase
     public static function provider()
     {
         // $data[n] in CLI = Game::testWhoWillWin with data set #n
-
         $data[0] = [
             'a',
             self::WIN_FIRST

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ftrrtf\Variant1;
+namespace vatseek;
 
 class GameTest extends \BaseGameTest {
 

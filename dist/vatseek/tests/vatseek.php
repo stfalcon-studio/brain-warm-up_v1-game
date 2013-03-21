@@ -1,6 +1,6 @@
 <?php
 
-namespace Mutuh;
+namespace YourGitHubLogin;
 
 class GameTest extends \BaseGameTest {
 
