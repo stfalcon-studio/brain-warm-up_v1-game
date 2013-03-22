@@ -1,6 +1,6 @@
 <?php
 
-namespace YourGitHubLogin;
+namespace Stfalcon;
 
 class GameTest extends \BaseGameTest {
 
