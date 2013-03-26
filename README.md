@@ -1,7 +1,7 @@
 Brain warm-up #1
 ===============
 
-[![Build Status](https://travis-ci.org/stfalcon-studio/brain-warm-up_v1-game.png?branch=master)](https://travis-ci.org/stfalcon-studio/brain-warm-up_v1-game)
+[![Build Status](https://travis-ci.org/stfalcon-studio/brain-warm-up_v1-game.png?branch=stfalcon-solution)](https://travis-ci.org/stfalcon-studio/brain-warm-up_v1-game)
 
 У двух игроков есть строка *s*, состоящая из строчных букв латинского алфавита. Они играют в игру, которая описывается следующими правилами:
 
